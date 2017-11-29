@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once 'config/autoload.php';
 	config\autoload::iniciar();
 	session_start();
@@ -11,12 +11,15 @@
 <head>
 <meta charset="utf-8">
 	<title>Academico-login</title>
-	<link rel="stylesheet" type="text/css" href="views/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="views/css/css.css">
+	<link rel="stylesheet" type="text/css" href="views/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="views/css/estilos.css">
 
 </head>
 <body>
-<div id="general"></div>
+<nav class="navbar navbar-inverse" id="general">
+  <div class="container-fluid">
+	</div>
+</nav>
 	<p>
 		<br><br>
 	</p>
@@ -25,26 +28,26 @@
 	</p>
 <br>
 <div class="container well" id="sha">
-	
+
 
 
 <div class="row">
 <div class="col-xs-12">
-<img src="logo-ejecutivo.jpg" class="img-responsive" id="ejecutivo">	
+<img src="logo-ejecutivo.jpg" class="img-responsive" id="ejecutivo">
 </div>
 <div class="col-xs-12">
 <p><br></p>
 <i><center><font color="gray">&nbsp &nbsp Academico-login </font></center></i>
-</div>	
+</div>
 </div>
 <form class="login" action="login.php" method="POST">
 <div class="form-group">
 <input type="email" name="correo" class="form-control" placeholder="correo electronico" required autosave>
-	
+
 </div>
 <div class="form-group">
 <input type="password" name="contrasena" class="form-control" placeholder="contraseña" required="">
-	
+
 </div>
 <button class="btn btn-ig btn-success btn-block" type="submit" name="aceptar">
 	ACEPTAR
@@ -57,9 +60,9 @@
 	<p class="help-block"><a href="#">¿No puedes acceder a tu cuenta?</a></p>
 </div>
 
-	
+
 </form>
-	
+
 </div>
 
 <?php

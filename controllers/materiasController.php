@@ -33,13 +33,14 @@ class materiasController{
 					$m=date('m');
 					$a=date('Y');
 					if($estudiante_curso=mysqli_fetch_array($datos[0])) {
+						$datos[0]=$estudiante_curso;
 						$this->rompe->set('tabla','estudiante_curso');
 						$this->rompe->set('columna','fechaFin');
 						$this->rompe->set('id',$estudiante_curso['id']);
 						$diaFin=mysqli_fetch_array($this->rompe->getDay());
 						$mesFin=mysqli_fetch_array($this->rompe->getMonth());
 						$anoFin=mysqli_fetch_array($this->rompe->getYear());
-						if($a<$anoFin['year']){
+						if($a<$anoFin['year']){  //se evalua si el curso en que esta inscrito el estudiante esta vigente
 							$datos[1]=TRUE;
 						}elseif($a>$anoFin['year']){
 							$datos[1]=FALSE;
@@ -110,7 +111,7 @@ class materiasController{
 			header("location:".RUTA."materias/cursos");
 
 			}elseif (isset($_POST['editar'])) {
-			
+
 			}else{
 			if($_SESSION['perfil']==1){
 				$this->materia->set('tabla','curso');
@@ -143,7 +144,7 @@ class materiasController{
 
 	public function listarProfesores(){
 		$this->usuario->set('perfil',2);
-		$datos=$this->usuario->listar();	
+		$datos=$this->usuario->listar();
 		return $datos;
 	}
 

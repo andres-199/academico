@@ -10,7 +10,7 @@ if($_SESSION['perfil']!=1){
 		<p><center><font size="5"> <b>CURSOS</b></font><i><font size="2" color="gray">&nbsp&nbsp(Registrar cursos y asignar materias)</font></i></center></p>
 		<p>
 			<form action="" method="post" class="form-inline">
-				<input type="text" name="nombre" placeholder="Nombre de el curso" required/>&nbsp <input type="submit" name="registrar" value="REGISTRAR" class="btn btn-info btn-sm">
+				<input type="text" name="nombre" placeholder="Nombre de el curso" required/>&nbsp <input type="submit" name="registrar" value="REGISTRAR +" class="btn btn-info btn-sm">
 			</form>
 		</p>
 		<tr>
@@ -68,10 +68,10 @@ while ($profesor_materia=mysqli_fetch_array($datosProfesor_materia)) {
 			</td>
 			<td><i>pendiente...</i></td>
 		</tr>
-		
+
 <?php
 }
 ?>
-		
+
 	</table>
 </div>

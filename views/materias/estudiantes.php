@@ -6,13 +6,13 @@ if($_SESSION['perfil']!=1){
 ?>
 
 <p><center><font size="5"> <b>ESTUDIANTES</b></font><i><font size="2" color="gray">&nbsp&nbsp(Matricular materias a estudiantes)</font></i></center></p>
-<div class="container" id="formR">
-		
+<div class="container well" id="formR">
+
 <?php
 if(!$_POST){
 ?>
-			
-<form action="" method="post" > 
+
+<form action="" method="post" >
 <div class="row">
   <div class="col-lg-8">
     <div class="input-group">
@@ -24,15 +24,17 @@ if(!$_POST){
   </div>
 </div>
 </form>
-			
+
 <?php
 }
 ?>
-			
+
 <?php
 if(isset($_POST['buscar'])){
-	if($datos[1]==TRUE){//comprueba si el estudiante esta registrado en un curso
-		echo "datos";
+	if($datos[1]==TRUE){//comprueba si el estudiante esta registrado en un curso vigente
+?>
+<!-- aqui cargamos la info del estudiante-->
+<?php
 	}else{
 		if($datos[2]['perfil']!=3){
 			echo"<center><font color=\"red\" size=\"3\">El Correo Ingresado no corresponde a una cuenta de estudiante</font><a href=\"".RUTA."materias/estudiantes\">  regresar atras <<</a></center>";
@@ -52,18 +54,18 @@ while ($curso=mysqli_fetch_array($datosCurso)) {
 					<option value="<?php echo $curso['id']; ?>"><?php echo $curso['nombre']; ?></option>
 <?php
 }
-?>						
+?>
 					</select>
      			 	</div>
 				</div>
-			<div class="form-group ">	
+			<div class="form-group ">
 					<label  class="col-lg-6 control-label ">Fecha inicio</label>
       			<div class="col-lg-6">
 					<input type="date" name="fechaInicio" required />
 				</div>
 			</div>
 
-			<div class="form-group ">	
+			<div class="form-group ">
 					<label  class="col-lg-6 control-label ">Fecha fin</label>
       			<div class="col-lg-6">
 					<input type="date" name="fechaFin" required />
@@ -76,12 +78,12 @@ while ($curso=mysqli_fetch_array($datosCurso)) {
 				</div>
 			</div>
 				</form>
-			
+
 <?php
 		}
 	}
 }
 ?>
-			
+
 
 </div>
