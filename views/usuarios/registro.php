@@ -3,7 +3,7 @@ if($_SESSION['perfil']!=1&&$_SESSION['perfil']!=3){
   header("location:".RUTA."index");
 }
 ?>
-<div class="container" id="formR">
+<div class="container well" id="formR">
 <form class="form-horizontal  " action="" method="post">
   <fieldset>
     <p><h3><center>REGISTRO DE USUARIOS<?php if($_SESSION['perfil']==3){ echo " ACUDIENTE";} ?></center></h3></p>
@@ -96,12 +96,12 @@ if($_SESSION['perfil']!=1&&$_SESSION['perfil']!=3){
 	<br>
     <div class="form-group">
     	<center>
-    		<input type="submit" name="aceptar" value="ACEPTAR" class="btn btn-success">&nbsp &nbsp
+    		<input type="submit" name="aceptar" value="ACEPTAR" class="btn btn-primary">&nbsp &nbsp
     		<input type="reset" name="borrar" value="BORRAR" class="btn btn-warning">
     	</center>
     </div>
 
-         
+
 </fieldset>
 
 </form>

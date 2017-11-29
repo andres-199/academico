@@ -19,9 +19,9 @@ if($_SESSION['perfil']!=1){
 <?php
 while ($materia=mysqli_fetch_array($datos)) {?>
 
-		<tr>	
+		<tr>
 			<td><b> <?php echo $materia['nombre']; ?></b></td>
-			<td><?php   
+			<td><?php
 
 					$datosRompe=$materias->profesor_materia('idMateria',$materia['id']);
 					while ($profesor_materia=mysqli_fetch_array($datosRompe)) {
@@ -31,13 +31,13 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 						}
 					}
 
-			    ?>  
+			    ?>
 			</td>
 
 			<td>
 				<form action="" method="post" class="form-inline">
 						<select name="idUsuario">
-							<?php 
+							<?php
 							 $datosProfesor=$materias->listarProfesores();
 							 while ($profesor=mysqli_fetch_array($datosProfesor)){
 							 			$comprueba=false;
@@ -45,14 +45,14 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 							 		while ($profesor_materia=mysqli_fetch_array($datosProfesor_materia)){
 							 			if($profesor_materia['idMateria']==$materia['id']){
 							 				$comprueba=true;
-							 			}	
+							 			}
 							 		}
 
 							 		if($comprueba==false){
 							 ?>
 									<option value="<?php echo $profesor['id']; ?>"><?php echo $profesor['nombre']." ".$profesor['apellido'];?>
 									</option>
-							<?php 
+							<?php
 									}
 							} ?>
 						</select>
@@ -64,7 +64,7 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 			<td>
 				<form action="" method="post" class="form-inline">
 						<select name="idProfesor_materia">
-							<?php 
+							<?php
 							 $datosProfesor=$materias->listarProfesores();
 							 while ($profesor=mysqli_fetch_array($datosProfesor)){
 							 			$comprueba=false;
@@ -74,7 +74,7 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 							 				if($profesor_materia['idMateria']==$materia['id']){
 							 					$comprueba=true;
 							 					$idProfesor_materia=$profesor_materia['id'];
-							 				}	
+							 				}
 							 			}
 							 		}
 
@@ -82,7 +82,7 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 							 ?>
 									<option value="<?php echo $idProfesor_materia; ?>"><?php echo $profesor['nombre']." ".$profesor['apellido'];?>
 									</option>
-							<?php 
+							<?php
 									}
 							} ?>
 						</select>
@@ -91,9 +91,9 @@ while ($materia=mysqli_fetch_array($datos)) {?>
 			</td>
 		</tr>
 
-	
+
 <?php } ?>
-		
-		
+
+
 	</table>
 </div>

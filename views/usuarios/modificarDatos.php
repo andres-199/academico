@@ -3,7 +3,7 @@
 $usuario=mysqli_fetch_array($datos);
 
 ?>
-<div class="container" id="formR">
+<div class="container well" id="formR">
 <form class="form-horizontal  " action="" method="post">
   <fieldset>
     <p><h3><center>MODIFICAR DATOS</center></h3></p>
@@ -76,12 +76,12 @@ $usuario=mysqli_fetch_array($datos);
   <br>
     <div class="form-group">
       <center>
-        <input type="submit" name="aceptar" value="  ACEPTAR  " class="btn btn-success">&nbsp &nbsp
-        
+        <input type="submit" name="aceptar" value="  ACEPTAR  " class="btn btn-primary">&nbsp &nbsp
+
       </center>
     </div>
 
-         
+
 </fieldset>
 
 </form>
