@@ -90,7 +90,8 @@
         								} else{
         									echo "estudiante";
         								}
-        								?>)</i>
+        								?>)
+						</i>
 					</font>
 					</a>
         </li>
